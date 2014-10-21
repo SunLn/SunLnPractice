@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NameSpace</title>
+    <script>
+        var MYAPP = MYAPP || {};
+        MYAPP.namespace = function  (ns_string) {
+            // body...
+            var parts = ns_string.split('.'),
+                parent = MYAPP,
+                i;
+            if (parts[0] === "MYAPP") {
+                parts = parts.slice(1);
+            }
+
+            for(i=0,len=parts.length; i<len; i++) {
+                if (typeof parent[parts[i]] === 'undefined') {
+                    parent[parts[i]] = {};
+                }
+
+                parent = parent[parts[i]];
+            }
+
+            return parent;
+        }
+
+        console.dir(MYAPP.namespace('ms.hello'));
+
+        var module2 = MYAPP.namespace('MYAPP.modules.module2');
+
+        console.log(module2 ===  MYAPP.modules.module2);
+        console.dir(module2);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
