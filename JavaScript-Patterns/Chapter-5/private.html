@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NameSpace</title>
+    <script>
+    var myObj = {
+        myprop : 1,
+        getProp: function(){
+            return this.myprop;
+        }
+    }
+    console.log(myObj.myprop);
+    console.log(myObj.getProp());
+
+    function Gadget() {
+        this.name = 'iPad';
+        this.stretch = function() {
+            return 'iPad';
+        };
+    }
+    var toy = new Gadget();
+    console.log(toy.name);
+    console.log(toy.stretch());
+
+    function Gadget2(argument) {
+        // body...
+        var name = 'MAC';
+        this.getName = function(){
+            return name;
+        }
+    }
+
+    var game = new Gadget2();
+    console.log(game.name);
+    console.log(game.getName());
+
+    function Gadget3() {
+        var specs = {
+            screen_width : 320,
+            screen_height : 480,
+            color: 'white'
+        };
+
+        this.getSpecs = function() {
+            return specs;
+        }
+    }
+
+    var pic = new Gadget3();
+    console.dir(specs = pic.getSpecs());
+    specs.color = 'block';
+    specs.price = 'free';
+
+    console.dir(pic.getSpecs())
+    </script>
+</head>
+<body>
+
+</body>
+</html>
