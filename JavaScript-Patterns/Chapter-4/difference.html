@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Func </title>
+    <script>
+        function foo() {
+            alert('global foo');
+        }
+
+        function bar() {
+            alert('global bar');
+        }
+
+        function test() {
+            console.log(typeof foo); // function
+            console.log(typeof bar); // undefined
+
+            foo(); // alert('local foo');
+            bar(); // TypeError
+
+            function foo(){
+                alert('local foo');
+            }
+
+            var bar = function(){
+                alert('local bar');
+            }
+        }
+        test();
+    </script>
+</head>
+<body>
+
+</body>
+</html>
