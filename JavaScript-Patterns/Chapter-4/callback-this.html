@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Func </title>
+
+</head>
+<body>
+    <script>
+        var createElement = function(){
+            var fragment = document.createDocumentFragment(),
+                i = 1000;
+            while(i--) {
+                var div = document.createElement('div');
+                div.innerHTML = i;
+               fragment.appendChild(div);
+            }
+            document.getElementsByTagName('body')[0].appendChild(fragment);
+        }
+        createElement();
+        var findNodes = function(callback,obj) {
+            var i = 1000,
+            nodes = [],
+            found;
+
+            if(typeof callback !== 'function') {
+                callback = false;
+            }
+
+            while(i--) {
+                var found = document.getElementsByTagName('div')[i];
+
+
+                if (callback) {
+                    if(typeof obj === 'object') {
+                        // callback.call(obj,found)
+                        callback.apply(obj,[found])
+                    } else {
+                        callback(found);
+                    }
+                }
+
+
+
+                nodes.push(found);
+            }
+            console.log('this',this)
+            return nodes;
+        }
+
+        var myapp = {};
+        myapp.color = 'green';
+        myapp.paint = function(node){
+            // console.log(this);
+            node.style.color = this.color;
+        }
+         myapp.paint(document.getElementsByTagName('div')[0])
+
+        var hide = function(node) {
+            node.style.display = 'none';
+        }
+
+        findNodes(myapp.paint,myapp);
+    </script>
+</body>
+</html>
