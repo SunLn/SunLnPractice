@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Func </title>
+
+</head>
+<body>
+    <script>
+        function func(a,b,c) {
+            console.log('');
+        }
+        console.log(func.length);
+
+        var myFunc = function(param) {
+            if (!myFunc.cache[param]) {
+                var result = 'hello world';
+                myFunc.cache[param] = result;
+            }
+            return myFunc.cache[param];
+        }
+        myFunc.cache = {}
+
+        console.log(myFunc('hello'));
+
+    </script>
+</body>
+</html>
