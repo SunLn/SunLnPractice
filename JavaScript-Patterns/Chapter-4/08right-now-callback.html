@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Func </title>
+
+</head>
+<body>
+    <script>
+        var result = (function(){
+            return 2+2;
+        }())
+        var result2 = (function(){
+            return 2+2;
+        })()
+        var result3 = function (){
+            return 2+2;
+        }()
+         // result3();
+         // result2();
+         console.log(result)
+         console.log(result2)
+         console.log(result3);
+
+         var getResult = (function(){
+            var res = 4;
+            return function() {
+                return res;
+            }
+         })()
+         console.log(getResult())
+
+         var o = {
+            message : (function(){
+                var who = "me",
+                    what = 'call';
+                return what + "  " + who;
+            })(),
+            getMsg : function() {
+                return this.message
+            }
+         }
+         console.log(o.getMsg());
+         console.log(o.message);
+    </script>
+</body>
+</html>
