@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Func </title>
+
+</head>
+<body>
+    <script>
+     var setup = function () {
+        console.log(1);
+        return function() {
+            console.log(2);
+        }
+     }
+
+     var my = setup();
+     my();
+
+     var s2 = function () {
+        var count = 4;
+        return function(){
+            console.log(count++);
+        }
+     }
+     var next = s2();
+     next();
+     next();
+     next();
+    </script>
+</body>
+</html>
