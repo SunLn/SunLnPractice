@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Func </title>
+
+</head>
+<body>
+    <script>
+     var setup = function () {
+        console.log(1);
+        setup = function(){
+            console.log(2);
+        }
+     }
+     // setup();
+     // setup();
+     // setup();
+
+     setup.property = 'property';
+     var prank = setup
+
+     var spooky = {
+        boo : setup
+     }
+     prank();
+     prank();
+     console.log(prank.property);
+
+     spooky.boo();
+     spooky.boo();
+     console.log(spooky.boo.property);
+
+     setup();
+     setup();
+     console.log(setup.property)
+    </script>
+</body>
+</html>
