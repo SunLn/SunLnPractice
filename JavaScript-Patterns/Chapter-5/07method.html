@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NameSpace</title>
+    <script>
+        if (typeof Function.prototype.method !== 'function') {
+            Function.prototype.method = function(name,implementation){
+                console.log(name);
+                Function.prototype[name] = implementation;
+                return this;
+            }
+        }
+
+        var Person = function(name) {
+            // body...
+            this.name = name;
+        };
+        Person.method('getName',function(){
+            return this.name;
+        }).method('setName',function(){
+            this.name = name;
+            return this;
+        });
+
+        var ab  = new Person('hehhh');
+        console.log(ab);
+        console.log(typeof ab);
+        ab.getName();
+        ab.setName('eve').getName();
+
+        console.log(typeof Function.prototype.setName);
+        console.log(typeof Function.prototype.getName);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
