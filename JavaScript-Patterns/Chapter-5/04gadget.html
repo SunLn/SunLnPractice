@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NameSpace</title>
+    <script>
+        // var Gadget = function () {
+        //     this.price = 1000;
+        // };
+        // Gadget.isShiny = function(){
+        //     return "you bet";
+        // }
+        // Gadget.prototype.setPrice = function(price){
+        //     this.price = price;
+        // }
+        // console.log(Gadget.price);
+        // console.log(Gadget.isShiny());
+        // var iphone = new Gadget();
+        // iphone.setPrice(5000);
+        // console.log(iphone.price);
+        // console.log(typeof Gadget.setPrice)
+        // console.log(typeof iphone.isShiny)
+
+        // Gadget.prototype.isShiny = Gadget.isShiny;
+        // console.log(iphone.isShiny());
+
+        var Gadget = function(price){
+            this.price = "1000";
+        }
+
+        Gadget.isShiny = function(){
+            var msg = "you bet";
+            console.log(this.price)
+            console.log(this);
+            if(this instanceof Gadget) {
+                msg += ",it costs $" + this.price + " !";
+            }
+            return msg;
+        }
+        Gadget.prototype.setPrice = function(price){
+            this.price = price;
+        }
+        Gadget.prototype.isShiny = function() {
+            return Gadget.isShiny.call(this);
+        }
+
+        console.log(Gadget.isShiny());
+
+        var a = new Gadget();
+        a.setPrice('488888');
+        console.log(a.isShiny());
+    </script>
+</head>
+<body>
+
+</body>
+</html>

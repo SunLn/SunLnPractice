@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NameSpace</title>
+    <script>
+    var obj = {
+        value : 1,
+        increment : function(){
+            this.value += 1;
+            return this;
+        },
+        add : function(num){
+            this.value +=num;
+            return this;
+        },
+        shout : function() {
+            console.log(this.value);
+        }
+    }
+
+    obj.increment().add(3).shout();
+
+    obj.increment();
+    obj.add(3);
+    obj.shout();
+
+    obj.increment().add(3).shout();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

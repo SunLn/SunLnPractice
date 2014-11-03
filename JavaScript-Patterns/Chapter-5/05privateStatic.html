@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NameSpace</title>
+    <script>
+    // var Gadget = (function  (argument) {
+    //     // body...
+    //     var counter = 0;
+    //     return function () {
+    //         console.log(counter+=1);
+    //     }
+    // })();
+    // var g1 = Gadget();//1
+    // var g2 = Gadget();//2
+    // var g3 = Gadget();//3
+
+    var Gadget = (function(){
+        var counter = 0,
+        newGadget ;
+
+        newGadget = function() {
+            counter += 1;
+        }
+        newGadget.prototype.getLastId = function(first_argument) {
+            // body...
+            return counter;
+        };
+        return newGadget;
+    })();
+
+    var g1 = new Gadget();
+    console.log(g1.getLastId());
+    var g2 = new Gadget();
+    console.log(g2.getLastId());
+    var g3 = new Gadget();
+    console.log(g3.getLastId());
+    </script>
+</head>
+<body>
+
+</body>
+</html>
