@@ -1,0 +1,22 @@
+{
+  "name": "SunLn-Practice",
+  "version": "0.0.1",
+  "homepage": "https://github.com/SunLn/SunLn-Practice",
+  "authors": [
+    "SunLn <dengchenhua@gmail.com>"
+  ],
+  "description": "SunLn's Practice Place",
+  "main": "index.html",
+  "keywords": [
+    "Practice",
+    "SunLn"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
