@@ -1,12 +1,12 @@
 {
   "name": "SunLn-Practice",
   "version": "0.0.1",
-  "homepage": "https://github.com/SunLn/SunLn-Practice",
+  "homepage": "https://github.com/SunLn/SunLnPractice",
   "authors": [
     "SunLn <dengchenhua@gmail.com>"
   ],
-  "description": "SunLn's Practice Place",
-  "main": "index.html",
+  "description": "SunLn Practice Place",
+  "main": "README.md",
   "keywords": [
     "Practice",
     "SunLn"
